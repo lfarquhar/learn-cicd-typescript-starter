@@ -8,7 +8,7 @@ headers["authorization"] = "ApiKey 12345";
 describe("isAuthorized", () => {
   test("authorization is on the headers is defined", () => {
     const result = getAPIKey(headers);
-    expect(result).equal("12345");
+    expect(result).equal("123456");
   });
 });
 
