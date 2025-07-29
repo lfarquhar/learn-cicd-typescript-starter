@@ -9,6 +9,7 @@ import { handlerNotesCreate, handlerNotesGet } from "./api/notes.js";
 import { handlerUsersCreate, handlerUsersGet } from "./api/users.js";
 
 const __dirname = path.resolve();
+config.api.port = "8080";
 
 if (!config.api.port) {
   console.error("PORT environment variable is not set");
@@ -28,7 +29,7 @@ app.use(
     maxAge: 300,
   }),
 );
-
+// exec": "node -r ts-node/register -r dotenv/config Index.ts dotenv_config_path=$(pwd)/.env"
 app.use("/", express.static(path.join(__dirname, config.api.filepathRoot)));
 
 const v1Router = express.Router();
