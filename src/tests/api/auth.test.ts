@@ -3,12 +3,12 @@ import { getAPIKey } from "../../api/auth";
 import { IncomingHttpHeaders } from "http";
 
 const headers: IncomingHttpHeaders = {};
-headers["authorization"] = "ApiKey 12345";
+headers["authorization"] = "ApiKey 1@345";
 
 describe("isAuthorized", () => {
   test("authorization is on the headers is defined", () => {
     const result = getAPIKey(headers);
-    expect(result).equal("12345");
+    expect(result).equal("1@345");
   });
 });
 
