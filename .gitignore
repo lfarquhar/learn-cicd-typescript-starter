@@ -3,3 +3,7 @@ coverage/
 dist/
 .env
 .vscode
+node_modules
+
+google-cloud-cli-linux-x86_64.tar.gz
+google-cloud-sdk/
