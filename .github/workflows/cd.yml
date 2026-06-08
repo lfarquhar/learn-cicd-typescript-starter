@@ -40,8 +40,9 @@ jobs:
       - name: Build Docker image
         run: gcloud builds submit --tag us-central1-docker.pkg.dev/radiant-cycle-467714-t5/notely-ar-repo/notely:${{ github.sha }} .      
         # run: gcloud builds submit --tag us-central1-docker.pkg.dev/radiant-cycle-467714-t5/notely-ar-repo/notely:latest .
+    
+      - name: Deploy to Cloud Run
+        run: gcloud run deploy notely--region us-central1 --image us-central1-docker.pkg.dev/radiant-cycle-467714-t5/notely-ar-repo/notely:${{ github.sha }} --allow-unauthenticated --project radiant-cycle-467714-t5 --max-instances=4 --quiet
 
-      
-      #- name: Deploy to Cloud Run
-      #  run: gcloud run deploy ${{ secrets.CLOUD_RUN_SERVICE_NAME }} --region us-central1 --image us-central1-docker.pkg.dev/radiant-cycle-467714-t5/notely-ar-repo/notely:${{ github.sha }} --allow-unauthenticated --quiet
+
 
