@@ -25,7 +25,10 @@ jobs:
         run: npm ci
 
       - name: Build app
-        run: npm run build       
+        run: npm run build
+
+      - name: migrate
+        run: npm run db:migrate       
         
       - id: 'auth'
         uses: 'google-github-actions/auth@v3'
